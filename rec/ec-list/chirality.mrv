@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<cml>
+<MDocument>
+  <MChemicalStruct>
+    <reaction>
+      <arrow type="EQUILIBRIUM" x1="-5.940000057220459" y1="8.095999717712402" x2="-2.1559998989105225" y2="8.095999717712402" />
+      <reactantList>
+        <molecule molID="m1">
+          <atomArray>
+            <atom id="a1" elementType="R" rgroupRef="2"
+                  x2="-9.218000869750977" y2="6.850320893430753" />
+            <atom id="a2" elementType="R" rgroupRef="4"
+                  x2="-10.758000869750976" y2="6.850320893430753" />
+            <atom id="a3" elementType="R" rgroupRef="1"
+                  x2="-10.758000869750976" y2="9.517679137086825" />
+            <atom id="a4" elementType="R" rgroupRef="3"
+                  x2="-8.448000869750976" y2="8.184000015258789" />
+            <atom id="a5" elementType="C"
+                  x2="-9.988000869750977" y2="8.184000015258789" />
+          </atomArray>
+          <bondArray>
+            <bond atomRefs2="a5 a1" order="1" />
+            <bond atomRefs2="a5 a2" order="1" />
+            <bond atomRefs2="a5 a3" order="1">
+              <bondStereo>H</bondStereo>
+            </bond>
+            <bond atomRefs2="a5 a4" order="1">
+              <bondStereo>W</bondStereo>
+            </bond>
+          </bondArray>
+        </molecule>
+      </reactantList>
+      <productList>
+        <molecule molID="m2">
+          <atomArray>
+            <atom id="a1" elementType="R" rgroupRef="2"
+                  x2="1.7160000238418576" y2="6.853056778831515" />
+            <atom id="a2" elementType="R" rgroupRef="4"
+                  x2="0.17600002384185842" y2="6.853056778831515" />
+            <atom id="a3" elementType="R" rgroupRef="1"
+                  x2="0.17600002384185842" y2="9.520415022487587" />
+            <atom id="a4" elementType="R" rgroupRef="3"
+                  x2="2.486000023841859" y2="8.186735900659553" />
+            <atom id="a5" elementType="C"
+                  x2="0.946000023841858" y2="8.186735900659553" />
+          </atomArray>
+          <bondArray>
+            <bond atomRefs2="a5 a1" order="1" />
+            <bond atomRefs2="a5 a2" order="1" />
+            <bond atomRefs2="a5 a3" order="1">
+              <bondStereo>W</bondStereo>
+            </bond>
+            <bond atomRefs2="a5 a4" order="1">
+              <bondStereo>H</bondStereo>
+            </bond>
+          </bondArray>
+        </molecule>
+      </productList>
+    </reaction>
+  </MChemicalStruct>
+</MDocument>
+</cml>

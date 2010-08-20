@@ -1,0 +1,42 @@
+######################################
+# pentose phosphate oxidative branch #
+######################################
+@D-glucose-6P_ring;D-glucolactone-6P;D-gluconate-6P;D-ribulose-5P + CO2;D-ribose-5P + CO2
+
+##########################################
+# pentose phosphate non-oxidative branch #
+##########################################
+D-ribose-5P + D-xylulose-5P;D-glyceraldehyde-3P + D-sedoheptulose-7P;D-erythrose-4P + D-fructose-6P
+D-erythrose-4P + D-xylulose-5P;D-fructose-6P + D-glyceraldehyde-3P
+
+##############
+# glycolysis #
+##############
+D-glucose-6P;D-fructose-6P
+D-fructose-6P;D-fructose-16P;Dihydroxyacetone-3P + D-Glyceraldehyde-3P;D-Glyceraldehyde-3P + D-Glyceraldehyde-3P
+D-glyceraldehyde-3P;bisphosphoglycerate;3-phosphoglycerate
+3-phosphoglycerate;2-phosphoglycerate;phosphoenolpyruvate
+phosphoenolpyruvate;pyruvate
+pyruvate;acetyl-CoA
+
+#########################
+# anaplerotic reactions #
+#########################
+phosphoenolpyruvate + CO2;oxaloacetate
+
+#############
+# TCA cycle #
+#############
+oxaloacetate + acetyl-CoA;citrate;cis-Aconitate;D-isocitrate;2-ketoglutarate + CO2
+2-ketoglutarate;succinyl-CoA
+succinyl-CoA;succinate;fumarate;malate;oxaloacetate
+
+############################
+# Entner-Durdoroff pathway #
+############################
+D-glucose-6P_ring;D-glucolactone-6P;D-gluconate-6P;2-dehydro-3-deoxy-D-gluconate-6P;D-Glyceraldehyde-3P + pyruvate
+
+####################
+# Glyoxylate Shunt #
+####################
+acetyl-CoA + glyoxylate;malate;oxaloacetate

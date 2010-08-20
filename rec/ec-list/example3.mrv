@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<cml>
+<MDocument>
+  <MChemicalStruct>
+    <reaction>
+      <arrow type="EQUILIBRIUM" x1="3.263333320617676" y1="3.446666717529297" x2="0.5866666883230209" y2="3.446666717529297" />
+      <reactantList>
+        <molecule molID="m1">
+          <atomArray
+              atomID="a1 a2 a3 a4 a5 a6"
+              elementType="C C C O O O"
+              x2="5.442814466214246 6.776493588042282 8.110172709870316 9.443851831698353 8.110172709870316 6.776493588042282"
+              y2="2.914999952316284 3.684999952316284 2.914999952316284 3.6849999523162817 1.374999952316284 5.224999952316285"
+              />
+          <bondArray>
+            <bond atomRefs2="a1 a2" order="2" />
+            <bond atomRefs2="a2 a3" order="1" />
+            <bond atomRefs2="a2 a6" order="1" />
+            <bond atomRefs2="a3 a4" order="1" />
+            <bond atomRefs2="a3 a5" order="2" />
+          </bondArray>
+        </molecule>
+      </reactantList>
+      <productList>
+        <molecule molID="m2">
+          <atomArray
+              atomID="a1 a2 a3 a4 a5 a6"
+              elementType="O O O C C C"
+              x2="-4.166320878171964 -2.8326417563439295 -1.4989626345158937 -2.832641756343929 -4.166320878171964 -5.5"
+              y2="5.444999990463257 1.5949999904632568 3.904999990463257 3.134999990463257 3.904999990463257 3.134999990463257"
+              />
+          <bondArray>
+            <bond atomRefs2="a5 a1" order="2" />
+            <bond atomRefs2="a4 a2" order="2" />
+            <bond atomRefs2="a4 a3" order="1" />
+            <bond atomRefs2="a5 a4" order="1" />
+            <bond atomRefs2="a6 a5" order="1" />
+          </bondArray>
+        </molecule>
+      </productList>
+    </reaction>
+  </MChemicalStruct>
+  <MTextBox id="o2" toption="NOROT" fontScale="10.0" halign="LEFT"
+            valign="TOP">
+    <Field name="text"><![CDATA[5.3.2  ]]>  </Field>
+    <MPoint x="1.0394997596740723" y="4.801499843597412" />
+    <MPoint x="2.5178997596740764" y="4.80149984359746" />
+    <MPoint x="2.5178997596740764" y="3.1998998435974606" />
+    <MPoint x="1.0394997596740723" y="3.199899843597409" />
+  </MTextBox>
+</MDocument>
+</cml>

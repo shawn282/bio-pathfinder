@@ -1,0 +1,52 @@
+# This is a definition file for pathways that are to be divided into modules.
+# Each line contains a linear list of compounds which are supposed to be a single step apart (according to the EC list),
+# i.e. there exists a single enzyme that can make A(i) into A(i+1).
+# Note that the @ sign at the beginning of a line, means the program will take chirality into account (and include epimerases in the EC list)
+
+########>>> TO BE ADDED !!! Non-pentose sugar degradation <<<
+
+# Pentose Phosphate Cycle (Oxidative branch)
+# gluconate dehydrogenase (D-gluconate-6P <=> D-ribulose-5P) is a coupled dehydogenation + decarboxylation (1.1.1.*)
+# so we add 'ribitol-5P' as an intermediate although it is not really one of the compounds in the pathway
+@D-fructose-6P;D-glucose-6P;D-glucose-6P_ring;D-glucolactone-6P;D-gluconate-6P;D-ribulose-5P;D-ribose-5P
+
+# TCA (using ec1.1.1)
+oxaloacetate + acetyl-CoA;citrate;cis-Aconitate;D-isocitrate;2-ketoglutarate;succinyl-CoA;succinate;fumarate;malate;oxaloacetate
+
+# Gluconeogenesis
+# malate dehydrogenase (malate <=> pyruvate) is a coupled dehydogenation + decarboxylation (1.1.1.*)
+# so we add 'oxaloacetate' as an intermediate although it is not really one of the compounds in the pathway
+fumarate;malate;oxaloacetate;pyruvate;phosphoenolpyruvate;2-phosphoglycerate;3-phosphoglycerate;bisphosphoglycerate
+
+# Entned-Dourdoroff pathway
+D-glucose-6P;D-glucose-6P_ring;D-glucolactone-6P;D-gluconate-6P;2-dehydro-3-deoxy-D-gluconate-6P;D-Glyceraldehyde-3P + pyruvate;bisphosphoglycerate + pyruvate;3-phosphoglycerate + pyruvate;2-phosphoglycerate + pyruvate;phosphoenolpyruvate + pyruvate;pyruvate + pyruvate
+
+# Glycolysis
+D-glucose-6P;D-fructose-6P;D-fructose-16P;Dihydroxyacetone-3P + D-Glyceraldehyde-3P;D-Glyceraldehyde-3P + D-Glyceraldehyde-3P;bisphosphoglycerate + D-Glyceraldehyde-3P;bisphosphoglycerate + bisphosphoglycerate
+dihydroxyacetone-3P;D-Glyceraldehyde-3P;bisphosphoglycerate;3-phosphoglycerate;2-phosphoglycerate;phosphoenolpyruvate;pyruvate;acetyl-CoA
+
+# Glycolysis -> TCA
+###(too long) oxaloacetate + bisphosphoglycerate;oxaloacetate + 3-phosphoglycerate;oxaloacetate + 2-phosphoglycerate;oxaloacetate + phosphoenolpyruvate;oxaloacetate + pyruvate;oxaloacetate + acetyl-CoA;citrate
+
+# TCA (without ec1.1.1 - coupled reaction)
+# isocitrate dehydrogenase (D-isocitrate <=> 2-ketoglutarate) is a coupled dehydogenation + decarboxylation (1.1.1.*)
+# so we add 'oxalo-succinate' as an intermediate although it is not really one of the compounds in the pathway
+oxaloacetate + acetyl-CoA;citrate;cis-Aconitate;D-isocitrate;oxalo-succinate;2-ketoglutarate;succinyl-CoA;succinate;fumarate;malate;oxaloacetate
+###(too long) succinyl-CoA + acetyl-CoA;succinate + acetyl-CoA;fumarate + acetyl-CoA;malate + acetyl-CoA;oxaloacetate + acetyl-CoA;citrate;cis-aconitate
+
+# Pentose Phosphate Cycle (Non-Oxidative branch)
+D-ribose-5P + D-xylulose-5P + D-xylulose-5P;D-glyceraldehyde-3P + D-sedoheptulose-7P + D-xylulose-5P;D-fructose-6P + D-erythrose-4P + D-xylulose-5P;D-fructose-6P + D-fructose-6P + D-glyceraldehyde-3P
+
+# Input pentoses
+@ribitol;D-ribulose;D-ribulose-5P;D-xylulose-5P
+@L-xylulose;L-xylulose-5P;L-ribulose-5P;D-xylulose-5P
+@L-arabinose;L-ribulose;L-ribulose-5P;D-xylulose-5P
+@D-xylose;D-xylulose;D-xylulose-5P
+@D-arabitol;D-xylulose;D-xylulose-5P
+
+# Methylglyoxal bypass (hydroxyacetone artificially added to indicate that methylglyoxal synthase is a double-enzyme)
+D-Glyceraldehyde-3P;Dihydroxyacetone-3P;hydroxyacetone;methylglyoxal;pyruvate;acetyl-CoA
+
+# Glyoxylate shunt
+acetyl-CoA + D-isocitrate;acetyl-CoA + glyoxylate + succinate;acetyl-CoA + glyoxylate + fumarate;acetyl-CoA + glyoxylate + malate;malate + malate
+

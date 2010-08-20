@@ -1,0 +1,2 @@
+oxaloacetate + acetyl-CoA;citrate;cis-Aconitate;D-isocitrate;oxalo-succinate;2-ketoglutarate;succinyl-CoA;succinate;fumarate;malate;oxaloacetate;pyruvate;phosphoenolpyruvate;2-phosphoglycerate;3-phosphoglycerate
+

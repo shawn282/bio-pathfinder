@@ -1,0 +1,12 @@
+# PRECURSORS
+bisphosphoglycerate;D-glucose-6P;D-ribose-5P;D-erythrose-4P;D-glyceraldehyde-3P;D-fructose-6P;3-phosphoglycerate;phosphoenolpyruvate;pyruvate;acetyl-CoA;oxaloacetate;2-ketoglutarate;succinyl-CoA
+# MODULES
+D-glucose-6P;D-glucolactone-6P;D-gluconate-6P;ribitol-5P;D-ribulose-5P;D-ribose-5P
+D-ribose-5P;D-xylulose-5P;D-glyceraldehyde-3P;D-sedoheptulose-7P;D-fructose-6P;D-erythrose-4P
+D-glucose-6P;D-fructose-6P;D-fructose-16P;dihydroxyacetone-3P
+D-fructose-6P;D-fructose-16P;dihydroxyacetone-3P;D-glyceraldehyde-3P;bisphosphoglycerate
+bisphosphoglycerate;3-phosphoglycerate;2-phosphoglycerate;phosphoenolpyruvate;pyruvate;acetyl-CoA
+acetyl-CoA;oxaloacetate;citrate;cis-Aconitate;D-isocitrate;2-ketoglutarate
+citrate;cis-Aconitate;D-isocitrate;oxalo-succinate;2-ketoglutarate;succinyl-CoA
+2-ketoglutarate;succinyl-CoA;succinate;fumarate;malate
+succinyl-CoA;succinate;fumarate;malate;oxaloacetate;citrate

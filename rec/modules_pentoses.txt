@@ -1,0 +1,13 @@
+# this describes the connection from glucose back to the pentose phosphate cycle
+D-glucose-6P_ring;D-glucolactone-6P;D-gluconate-6P;ribitol-5P;D-ribulose-5P
+# part of the pentose phosphate cycle, just for testing
+D-ribose-5P + D-xylulose-5P;D-glyceraldehyde-3P + D-sedoheptulose-7P
+# the entire pentose phosphate pathway
+D-ribose-5P + D-xylulose-5P + D-xylulose-5P;D-glyceraldehyde-3P + D-sedoheptulose-7P + D-xylulose-5P;D-fructose-6P + D-erythrose-4P + D-xylulose-5P;D-fructose-6P + D-fructose-6P + D-glyceraldehyde-3P
+# input pentose (not that the @ sign, means the program needs to take chirality into account):
+@ribitol;D-ribulose;D-ribulose-5P;D-xylulose-5P
+@L-xylulose;L-xylulose-5P;L-ribulose-5P;D-xylulose-5P
+@L-arabinose;L-ribulose;L-ribulose-5P;D-xylulose-5P
+@D-xylose;D-xylulose;D-xylulose-5P
+@D-arabitol;D-xylulose;D-xylulose-5P
+@D-ribose;D-ribose-5P

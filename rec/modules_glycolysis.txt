@@ -1,0 +1,3 @@
+D-glucose-6P;D-fructose-6P;D-fructose-16P;Dihydroxyacetone-3P + D-Glyceraldehyde-3P;D-Glyceraldehyde-3P + D-Glyceraldehyde-3P;bisphosphoglycerate + D-Glyceraldehyde-3P;bisphosphoglycerate + bisphosphoglycerate
+dihydroxyacetone-3P;D-Glyceraldehyde-3P;bisphosphoglycerate;3-phosphoglycerate;2-phosphoglycerate;phosphoenolpyruvate;pyruvate;acetyl-CoA
+
