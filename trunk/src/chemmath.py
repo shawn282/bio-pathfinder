@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from pylab import array, zeros, size, find, inf, ones
+from numpy import array, zeros, size, inf, ones
 from math import sqrt, log
 from random import random, randint
 
@@ -30,6 +30,17 @@ def floyd_warshall(G):
                     D[i, j] = min(D[i, j], D[i, k] + D[k, j])
     return D
 
+def get_neighbor_set(G, curr_node):
+	neighbors = set()
+	for i in range(G.shape[0]):
+		if (i == curr_node):
+			continue
+		elif (G[i, curr_node] != 0):
+			neighbors.add(i)
+		elif (G[curr_node, i] != 0):
+			neighbors.add(i)
+	return neighbors
+
 def get_connectivity_sets(G):
     """ find connectivity sets in a general graph's connectivity matrix
     """
@@ -47,8 +58,7 @@ def get_connectivity_sets(G):
             conn_set.add(curr_node)
 
             # calculate the set of all neighbors (ignoring edge direction)
-            neighbor_set = set(find(G[curr_node,:])) | set(find(G[:,curr_node]))
-            
+            neighbor_set = get_neighbor_set(G, curr_node)
             bfs_queue += list(neighbor_set & unmarked)
             unmarked = unmarked - neighbor_set
         conn_sets.append(conn_set)
@@ -66,7 +76,7 @@ def get_connectivity_set(G, root):
         conn_set.add(curr_node)
 
         # calculate the set of all neighbors (ignoring edge direction)
-        neighbor_set = set(find(G[curr_node,:])) | set(find(G[:,curr_node]))
+        neighbor_set = get_neighbor_set(G, curr_node)
         
         bfs_queue += list(neighbor_set & unmarked)
         unmarked -= neighbor_set

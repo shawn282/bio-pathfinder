@@ -7,7 +7,6 @@
 
 import util
 import sys
-import pylab
 import bag
 from pathfinder import PathFinder
 from chemconvert import compound2graph
