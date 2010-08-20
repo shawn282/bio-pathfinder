@@ -3,14 +3,14 @@
 import bag
 from types import *
 from util import _mkdir, add_vector, subtract, scale_vector, direction
-from chemmath import *
 from svg import *
 import math
 import sys
 import time
 from chemconstants import *
-from pylab import array, zeros
+from numpy import array, zeros
 from html_writer import HtmlWriter
+from chemmath import get_connectivity_sets, equivalence_groups
 
 class ChemGraph(object):
     def __init__(self):
