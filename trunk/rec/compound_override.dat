@@ -1,0 +1,37 @@
+UNIQUE-ID - ATP
+SMILES - A(OP(O)(=O)OP(=O)(O)OP(O)(O)=O)
+MOLFILE - atp.mol
+//
+UNIQUE-ID - ADP
+SMILES - A(OP(O)(=O)OP(=O)(O)O)
+MOLFILE - adp.mol
+//
+UNIQUE-ID - AMP
+SMILES - A(OP(O)(=O)O)
+MOLFILE - amp.mol
+//
+UNIQUE-ID - GTP
+SMILES - G(OP(O)(=O)OP(=O)(O)OP(O)(O)=O)
+MOLFILE - gtp.mol
+//
+UNIQUE-ID - GDP
+SMILES - G(OP(O)(=O)OP(=O)(O)O)
+MOLFILE - gdp.mol
+//
+UNIQUE-ID - GMP
+SMILES - G(OP(O)(=O)O)
+MOLFILE - gmp.mol
+//
+UNIQUE-ID - |Pi|
+SMILES - P(O)(O)(=O)O
+MOLFILE - phosphate.mol
+//
+# NAD and it variants is being ignored since we assume it doesn't participate in the reaction
+UNIQUE-ID - NAD
+//
+UNIQUE-ID - NADH
+//
+UNIQUE-ID - |NAD(P)|
+//
+UNIQUE-ID - |NAD(P)H|
+//

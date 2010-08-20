@@ -1,0 +1,576 @@
+###########################################################################
+# This is a list of enzymatic reactions.
+# The format of this file is:
+# EC             - <EC number>
+# DESCRIPTION    - <the class name>
+# REMARK         - <remark>
+# SUBSTRATE      - <hash of the subgraph on the left-hand side>
+# PRODUCT        - <hash of the subgraph on the right-hand side>
+# IMPORTED_ATOMS - <indices of atoms that are added from outside: like H2O and PO3 (from ATP)>
+# EXPORTED_ATOMS - <indices of atoms that are dissolved after the reaction: like H2O, CO2, NH3 and PO3 (to ADP)>
+# REVERSIBLE     - <TRUE/FALSE according to the reversibility of the reaction>
+# // - separated between the enzyme declarations
+#
+# Note: hydrogen atoms can be added to any atom (like CH2), and indicate the minimal number of hydrogens
+#       for the reaction to be possible. Not indicating them will mean that they are not required at all.
+###########################################################################
+//
+UNIQUE_ID - ec1.1
+EC - 1.1
+NAME - alcohol dehydrogenase
+DESCRIPTION - Acting on CH-OH group of donors
+SUBSTRATE - CH,OH~1
+PRODUCT - C,O~2
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec1.2
+EC - 1.2
+NAME - aldehyde dehydrogenase
+DESCRIPTION - Acting on aldehyde or oxo group of donors
+SUBSTRATE - CH,O,OH2~200
+PRODUCT - C,O,OH~210
+IMPORTED_ATOMS - 2
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec1.3
+EC - 1.3
+NAME - C-C reductase
+REV_NAME - C=C oxidase
+DESCRIPTION - Acting on CH-CH group of donors
+SUBSTRATE - CH,CH~1
+PRODUCT - C,C~2
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec1.4
+EC - 1.4
+NAME - amino dehydrogenase
+DESCRIPTION - Acting on CH-NH2 group of donors
+SUBSTRATE - CH,NH2,OH2~100
+PRODUCT - C,NH3,O~020
+IMPORTED_ATOMS - 2
+EXPORTED_ATOMS - 1
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec1.5a
+EC - 1.5
+NAME - C-N reductase
+REV_NAME - C-N oxidase
+DESCRIPTION - Acting on CH-NH group of donors (and transforming to C=N)
+SUBSTRATE - CH,NH~1
+PRODUCT - C,N~2
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec1.5b
+EC - 1.5
+NAME - C-N hydrolase
+DESCRIPTION - Acting on CH-NH group of donors (and breaking the bond)
+SUBSTRATE - CH,N,OH2~100
+PRODUCT - C,NH,O~020
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec2.1.1
+EC - 2.1.1
+NAME - methyltransferase
+SUBSTRATE - CH,CH4~0
+PRODUCT - C,CH3~1
+REVERSIBLE - TRUE
+IMPORTED_ATOMS - 1
+//
+UNIQUE_ID - ec2.1.2a
+EC - 2.1.2
+NAME - hydroxymethyltransferase
+REMARK - Can be also formyltransferase and related transferases  too hard to generalize, probably very specific anyway
+SUBSTRATE - CH,CH3,OH~001
+PRODUCT - C,CH2,OH~101
+REVERSIBLE - TRUE
+IMPORTED_ATOMS - 1 2
+//
+UNIQUE_ID - ec2.1.2b
+EC - 2.1.2
+NAME - formyltransferase
+SUBSTRATE - CH,CH2,O~002
+PRODUCT - C,CH,O~102
+REVERSIBLE - TRUE
+IMPORTED_ATOMS - 1 2
+//
+UNIQUE_ID - ec2.1.3
+EC - 2.1.3
+NAME - carboxyltransferase
+SUBSTRATE - C,C,O,OH~002010
+PRODUCT - C,C,O,OH~102010
+REVERSIBLE - TRUE
+IMPORTED_ATOMS - 1 2 3
+//
+UNIQUE_ID - ec2.1.4
+EC - 2.1.4
+NAME - amidinotransferase 
+SUBSTRATE - X,C,NH,NH2,X~1020100000
+PRODUCT - X,C,NH,NH2,X~0020100100
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec2.2.1a
+EC - 2.2.1
+NAME - transketolase
+SUBSTRATE - C,OH,C,O,CH2,OH,C,O~1100020010000010000000000002
+PRODUCT - C,O,C,O,CH2,OH,C,OH~2000020010000010010000000001
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec2.2.1b
+EC - 2.2.1
+NAME - transaldolase
+SUBSTRATE - C,OH,C,OH,C,O,CH2,OH,C,O~110001001000002000010000000100000000000000002
+PRODUCT - C,O,C,OH,C,O,CH2,OH,C,OH~200001001000002000010000000100100000000000001
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec2.3.1
+EC - 2.3.1
+NAME - acyltransferase
+DESCRIPTION - transferring acyl groups other than amino-acyl groups
+SUBSTRATE - X,C,O,CH3,X~1020100000
+PRODUCT - X,C,O,CH3,X~0020100100
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec2.3.2
+EC - 2.3.2
+NAME - aminoacyltransferase
+SUBSTRATE - X,C,NH2,C,O,OH,X~101010000200010000000
+PRODUCT - X,C,NH2,C,O,OH,X~001010000200010010000
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec2.3.3
+EC - 2.3.3
+NAME - acyltransferase
+DESCRIPTION - transferring acyl groups that are converted into alkyl upon transfer
+REMARK - in all of the examples, the acyl was converted to carboxyl (not alkyl).
+//
+UNIQUE_ID - ec2.4
+EC - 2.4
+NAME - glycosyltransferase
+REMARK - too specific to include in this version (glycosyl are very big groups, and one doesn't usually see these enzymes in the main metabolic networks)
+//
+UNIQUE_ID - ec2.5.1
+EC - 2.5.1
+NAME - alkyltransferase
+DESCRIPTION - transferring alkyl or aryl groups, other than methyl groups 
+REMARK - try to generalize later...
+//
+UNIQUE_ID - ec2.6.1
+EC - 2.6.1
+NAME - aminotransferases
+DESCRIPTION - transferring amin groups
+SUBSTRATE - C,NH2,C,O~100002
+PRODUCT - C,NH2,C,O~001200
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec2.6.2
+EC - 2.6.2
+NAME - oximinotransferase
+SUBSTRATE - C,N,OH,C,O~2010000002
+PRODUCT - C,N,OH,C,O~0010202000
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec2.6.99
+EC - 2.6.99
+DESCRIPTION - transferring other nitrogenous groups 
+REMARK - try to generalize later...
+//
+UNIQUE_ID - ec2.7.1
+EC - 2.7.1
+NAME - kinase(OH)
+DESCRIPTION - phosphotransferases with an alcohol group as acceptor
+SUBSTRATE - PO3,OH~0
+PRODUCT - PO3,O~1
+REVERSIBLE - TRUE
+IMPORTED_ATOMS - 0
+//
+UNIQUE_ID - ec2.7.2
+EC - 2.7.2
+NAME - kinase(COH)
+DESCRIPTION - phosphotransferases with a carboxyl group as acceptor
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec2.7.3
+EC - 2.7.3
+NAME - kinase(NH)
+DESCRIPTION - phosphotransferases with a nitrogenous group as acceptor
+SUBSTRATE - O,PO3,NH~100
+PRODUCT - OH,PO3,N~001
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec2.7.4
+EC - 2.7.4
+NAME - kinase(P)
+DESCRIPTION - phosphotransferases with a phosphate group as acceptor
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec2.7.6
+EC - 2.7.6
+NAME - diphosphotransferases
+REMARK - not important enough, add later
+//
+UNIQUE_ID - ec2.7.7
+EC - 2.7.7
+NAME - necleotidyltransferases
+REMARK - not important enough, add later
+//
+UNIQUE_ID - ec2.7.8
+EC - 2.7.8
+DESCRIPTION - transferases for other substituted phosphate groups
+REMARK - not important enough, add later
+//
+UNIQUE_ID - ec2.7.9
+EC - 2.7.9
+DESCRIPTION - phosphotransferases with paired acceptors
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec2.7.10
+EC - 2.7.10
+DESCRIPTION - protein-tyrosine kinase
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec2.7.11
+EC - 2.7.11
+DESCRIPTION - protein-serine/threonine kinases
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec2.7.12
+EC - 2.7.12
+DESCRIPTION - dual specificity kinases (Ser/Thr and Tyr)
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec2.7.13
+EC - 2.7.13
+DESCRIPTION - protein-histidine kinases
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec2.7.99
+EC - 2.7.99
+DESCRIPTION - other protein kinases
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec3.1.1
+EC - 3.1.1
+NAME - carboxyl ester hydrolase
+SUBSTRATE - X,C,O,O,X,OH2~102010000100000
+PRODUCT - X,C,O,OH,X,OH~102000000101000
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec3.1.2
+EC - 3.1.2
+NAME - thiolester hydrolases
+SUBSTRATE - X,C,O,S,X,OH2~102010000100000
+PRODUCT - X,C,O,SH,X,OH~102000000101000
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec3.1.3
+EC - 3.1.3
+NAME - phosphoric monoester hydrolases
+REMARK - covered by 2.7.1
+//
+UNIQUE_ID - ec3.1.4-99
+EC - 3.1
+DESCRIPTION - other kinds of specific ester hydrolases
+REMARK - not important enough, add later (most are covered by 2.7.1)
+//
+UNIQUE_ID - ec3.2
+EC - 3.2
+DESCRIPTION - glycosidases, i.e. enzymes hydrolyzing O- and S-glycosyl
+REMARK - not important, add later
+//
+UNIQUE_ID - ec3.3.1
+EC - 3.3.1
+NAME - thioether hydrolase
+DESCRIPTION - thioether and trialkylsulfonium hydrolases
+SUBSTRATE - X,S,X,OH2~101000
+PRODUCT - X,SH,X,OH~100001
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec3.3.2
+EC - 3.3.2
+NAME - ether hydrolases
+SUBSTRATE - X,O,X,OH2~101000
+PRODUCT - X,OH,X,OH~100001
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec3.4
+EC - 3.4
+DESCRIPTION - acting on peptide bonds
+REMARK - add later
+//
+UNIQUE_ID - ec3.5.1
+EC - 3.5.1
+NAME - amide hydrolase
+DESCRIPTION - acting on C-N bonds other than peptide bonds, in linear amides
+SUBSTRATE - C,O,NH,OH2~210000
+PRODUCT - C,O,NH2,OH~200100
+IMPORTED_ATOMS - 3
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec3.5.2
+EC - 3.5.2
+DESCRIPTION - acting on C-N bonds other than peptide bonds, in cyclic amides
+REMARK - covered by 3.5.1
+//
+UNIQUE_ID - ec3.5.3
+EC - 3.5.3
+NAME - amidine hydrolase
+DESCRIPTION - acting on C-N bonds other than peptide bonds, in linear amidines
+SUBSTRATE - C,NH,NH,OH2~210000
+PRODUCT - C,NH,NH2,OH~200100
+IMPORTED_ATOMS - 3
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec3.5.4
+EC - 3.5.4
+DESCRIPTION - acting on C-N bonds other than peptide bonds, in cyclic amidines
+REMARK - covered by 3.5.3
+//
+UNIQUE_ID - ec3.5.5
+EC - 3.5.5
+NAME - nitrile hydrolase
+DESCRIPTION - acting on C-N bonds other than peptide bonds, in nitriles
+SUBSTRATE - C,N,OH2,OH2~300000
+PRODUCT - C,NH3,O,OH~020100
+IMPORTED_ATOMS - 2 3
+EXPORTED_ATOMS - 1
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec3.5.99
+EC - 3.5.99
+DESCRIPTIOn - acting on C-N bonds other than peptide bonds, in other compounds
+REMARK - should be covered by 3.5.1 and 3.5.3
+//
+UNIQUE_ID - ec3.6.1
+EC - 3.6.1
+DESCRIPTION - acting on acid anhydrides (phosphorous-containing)
+REMARK - add later
+//
+UNIQUE_ID - ec3.6.2
+EC - 3.6.2
+DESCRIPTION - acting on acid anhydrides (sulfonyl-containing)
+REMARK - add later
+//
+UNIQUE_ID - ec3.6.3
+EC - 3.6.3
+DESCRIPTION - acting on acid anhydrides (catalyzing transmembrane movement)
+REMARK - add later
+//
+UNIQUE_ID - ec3.6.4
+EC - 3.6.4
+DESCRIPTION - acting on acid anhydrides (involved in cellular and...)
+REMARK - add later
+//
+UNIQUE_ID - ec3.6.5
+EC - 3.6.5
+DESCRIPTION - acting on GTP (involved in cellular and subcellular movement)
+REMARK - add later
+//
+UNIQUE_ID - ec3.7.1
+EC - 3.7.1
+NAME - ketone hydrolase
+DESCRIPTION - acting on C-C bonds (in ketonic substances)
+SUBSTRATE - C,O,C,OH2~210000
+PRODUCT - C,O,CH,OH~200100
+IMPORTED_ATOMS - 3
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec3.8
+EC - 3.8
+DESCRIPTION - acting on halide bonds
+REMARK - add later (halides are not included in version 1.0)
+//
+UNIQUE_ID - ec3.9
+EC - 3.9
+DESCRIPTION - acting on P-N bonds
+REMARK - add later
+//
+UNIQUE_ID - ec3.10
+EC - 3.10
+DESCRIPTION - acting on S-N bonds
+REMARK - add later
+//
+UNIQUE_ID - ec3.11
+EC - 3.11
+DESCRIPTION - acting on C-P bonds
+REMARK - add later
+//
+UNIQUE_ID - ec3.12
+EC - 3.12
+DESCRIPTION - acting on S-S bonds
+REMARK - add later
+//
+UNIQUE_ID - ec3.13
+EC - 3.13
+DESCRIPTION - acting on C-S bonds
+REMARK - add later
+//
+UNIQUE_ID - ec4.1.1
+EC - 4.1.1
+NAME - carboxy lyase
+SUBSTRATE - C,C,O,OH~102010
+PRODUCT - CH,C,O,O~002020
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec4.1.2
+EC - 4.1.2
+NAME - aldehyde lyases
+SUBSTRATE - C,C,OH~101
+PRODUCT - CH,C,O~002
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec4.1.3
+EC - 4.1.3
+NAME - oxo-acid lyase
+REMARK - covered by 4.1.2
+//
+UNIQUE_ID - ec4.1.99
+EC - 4.1.99
+NAME - C-C lyase
+DESCRIPTION - C-C bonds other than (carboxy, aldehyde or oxo-acid)
+REMARK - add later
+//
+UNIQUE_ID - ec4.2.1
+EC - 4.2.1
+NAME - hydro lyase
+SUBSTRATE - XH,C,OH~101
+PRODUCT - X,C,OH2~200
+EXPORTED_ATOMS - 2
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec4.2.2
+EC - 4.2.2
+DESCRIPTION - C-O lyases (acting on polysaccharides)
+REMARK - add later
+//
+UNIQUE_ID - ec4.2.3
+EC - 4.2.3
+DESCRIPTION - C-O lyases (acting on phosphates)
+REMARK - add later
+//
+UNIQUE_ID - ec4.3.1
+EC - 4.3.1
+NAME - ammonia lyase
+SUBSTRATE - X,C,NH~101
+PRODUCT - X,C,NH2~200
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec4.3.2
+EC - 4.3.2
+DESCRIPTION - C-N lyases (lyases acting on amides, amidines, etc)
+REMARK - should be covered by 4.3.1
+//
+UNIQUE_ID - ec4.3.3
+EC - 4.3.3
+DESCRIPTION - C-N lyases (amine-lyases)
+REMARK - should be covered by 4.3.1
+//
+UNIQUE_ID - ec4.4
+EC - 4.4
+DESCRIPTION - C-S lyases
+REMARK - add later
+//
+UNIQUE_ID - ec4.5
+EC - 4.5
+DESCRIPTION - C-halide lyases
+REMARK - add later (halids are not included in version 1.0)
+//
+UNIQUE_ID - ec4.6
+EC - 4.6
+DESCRIPTION - P-O lyases
+REMARK - add later
+//
+UNIQUE_ID - ec4.99
+EC - 4.99
+DESCRIPTION - other lyases (Sole sub-subclass for lyases that do not belong in the other)
+REMARK - add later
+//
+UNIQUE_ID - ec5.1
+EC - 5.1
+NAME - epimerase
+REV_NAME - epimerase
+DESCRIPTION - racemases and epimerases
+#SUBSTRATE - X@1~
+#PRODUCT - X@2~
+#REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec5.2.1
+EC - 5.2.1
+DESCRIPTION - cis-trans isomerases
+REMARK - cis-trans is ignored at the moment (until version 2.0)
+//
+UNIQUE_ID - ec5.3.1
+EC - 5.3.1
+NAME - isomerase(C=O/C=O)
+DESCRIPTION - intramolecular oxidoreductases (interconverting aldoses and ketoses)
+SUBSTRATE - C,O,C,OH~210001
+PRODUCT - C,OH,C,O~110002
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec5.3.2
+EC - 5.3.2
+NAME - isomerase(C=O/C=C)
+DESCRIPTION - intramolecular oxidoreductases (interconverting keto- and enol- groups)
+SUBSTRATE - C,O,CH~210
+PRODUCT - C,OH,C~120
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec5.3.3
+EC - 5.3.3
+NAME - isomerase(C=C/C=C)
+DESCRIPTION - intramolecular oxidoreductases (transposing C==C bonds)
+SUBSTRATE - C,C,C~201
+PRODUCT - C,C,C~102
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec5.3.4
+EC - 5.3.4
+DESCRIPTION - intramolecular oxidoreductases (transposing S-S bonds)
+REMARK - add later
+//
+UNIQUE_ID - ec5.4.1
+EC - 5.4.1
+DESCRIPTION - intramolecular transferases/mutases (transferring acyl groups)
+REMARK - add later (too specific)
+//
+UNIQUE_ID - ec5.4.2
+EC - 5.4.2
+NAME - phosphotransferase
+DESCRIPTION - intramolecular transferases/mutases
+SUBSTRATE - O,PO3,OH~100
+PRODUCT - OH,PO3,O~001
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec5.4.3
+EC - 5.4.3
+NAME - aminotransferase
+DESCRIPTION - intramolecular transferases/mutases
+SUBSTRATE - C,NH2,CH~110
+PRODUCT - CH,NH2,C~011
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec5.4.4a
+EC - 5.4.4
+NAME - hydroxytransferase(C/C)
+DESCRIPTION - intramolecular transferases/mutases (transferring -OH groups from C to C)
+#SUBSTRATE - C,OH,CH~100
+#PRODUCT - CH,OH,C~001
+REVERSIBLE - FALSE
+//
+UNIQUE_ID - ec5.4.4b
+EC - 5.4.4
+NAME - hydroxytransferase(C/N)
+DESCRIPTION - intramolecular transferases/mutases (transferring -OH groups from N to C)
+REMARK - this reaction is too specific and probably is not generalizable
+#SUBSTRATE - N,OH,CH~100
+#PRODUCT - NH,OH,C~001
+REVERSIBLE - TRUE
+//
+UNIQUE_ID - ec5.5.1
+EC - 5.5.1
+DESCRIPTION - intramolecular lyases
+REMARK - covered by 4.*
+//
+EC - 6
+DESCRIPTION - ligases
+REMARK - covered by 4.* (lyases)
+//

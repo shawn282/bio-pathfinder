@@ -1,0 +1,15 @@
+# checking all pairs of consecutive precursors
+D-fructose-6P;D-glyceraldehyde-3P + D-glyceraldehyde-3P;3
+D-ribose-5P + D-xylulose-5P;D-fructose-6P + D-erythrose-4P;2
+D-erythrose-4P + D-xylulose-5P;D-fructose-6P + D-glyceraldehyde-3P;1
+@D-glucose-6P_ring;D-ribose-5P;5
+D-glucose-6P;D-fructose-6P;1
+D-glyceraldehyde-3P;bisphosphoglycerate;1
+bisphosphoglycerate;3-phosphoglycerate;1
+3-phosphoglycerate;phosphoenolpyruvate;2
+phosphoenolpyruvate;pyruvate;1
+pyruvate;acetyl-CoA;1
+2-ketoglutarate;succinyl-CoA;1
+acetyl-CoA + oxaloacetate;2-ketoglutarate;5
+succinyl-CoA;oxaloacetate;4
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<cml>
+<MDocument>
+  <MChemicalStruct>
+    <reaction>
+      <arrow type="EQUILIBRIUM" x1="3.263333320617676" y1="3.446666717529297" x2="0.5866666883230209" y2="3.446666717529297" />
+      <reactantList>
+        <molecule molID="m1">
+          <atomArray
+              atomID="a1 a2 a3 a4 a5 a6 a7 a8 a9 a10"
+              elementType="C C C O O O P O O O"
+              formalCharge="0 0 0 0 0 0 0 -1 -1 0"
+              x2="5.442814466214246 6.776493588042282 8.110172709870316 9.443851831698353 8.110172709870316 6.776493588042282 10.733017010706563 12.022182189714796 9.89060788134442 11.575426140068725"
+              y2="2.914999952316284 3.684999952316284 2.914999952316284 3.6849999523162817 1.374999952316284 5.224999952316285 4.527409081678433 5.369818211040577 5.816574260686663 3.2382439026702103"
+              />
+          <bondArray>
+            <bond atomRefs2="a1 a2" order="1" />
+            <bond atomRefs2="a2 a3" order="1" />
+            <bond atomRefs2="a2 a6" order="2" />
+            <bond atomRefs2="a3 a4" order="1" />
+            <bond atomRefs2="a3 a5" order="2" />
+            <bond atomRefs2="a4 a7" order="1" />
+            <bond atomRefs2="a7 a10" order="2" />
+            <bond atomRefs2="a7 a8" order="1" />
+            <bond atomRefs2="a7 a9" order="1" />
+          </bondArray>
+        </molecule>
+      </reactantList>
+      <productList>
+        <molecule molID="m2">
+          <atomArray
+              atomID="a1 a2 a3 a4 a5 a6"
+              elementType="O O O C C C"
+              x2="-4.166320878171964 -2.8326417563439295 -1.4989626345158937 -2.832641756343929 -4.166320878171964 -5.5"
+              y2="5.444999990463257 1.5949999904632568 3.904999990463257 3.134999990463257 3.904999990463257 3.134999990463257"
+              />
+          <bondArray>
+            <bond atomRefs2="a5 a1" order="2" />
+            <bond atomRefs2="a4 a2" order="2" />
+            <bond atomRefs2="a4 a3" order="1" />
+            <bond atomRefs2="a5 a4" order="1" />
+            <bond atomRefs2="a6 a5" order="1" />
+          </bondArray>
+        </molecule>
+      </productList>
+    </reaction>
+  </MChemicalStruct>
+  <MTextBox id="o2" toption="NOROT" fontScale="10.0" halign="LEFT"
+            valign="TOP">
+    <Field name="text">2.7.2  </Field>
+    <MPoint x="1.1274999380111694" y="4.757500171661377" />
+    <MPoint x="2.60589993801117" y="4.757500171661441" />
+    <MPoint x="2.60589993801117" y="3.9567001716614403" />
+    <MPoint x="1.1274999380111694" y="3.9567001716613763" />
+  </MTextBox>
+</MDocument>
+</cml>

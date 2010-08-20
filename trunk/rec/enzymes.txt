@@ -1,0 +1,52 @@
+###########################################################################
+# This is a list of enzymatic reactions.
+# The format of this file is:
+# EC - <EC number>
+# DESCRIPTION - <the class name>
+# LEFT - <hash of the subgraph on the left-hand side>
+# RIGHT - <hash of the subgraph on the right-hand side>
+# SIDE - <side reaction, e.g. ATP->ADP or NAD->NADH>
+# // - separated between the enzyme declarations
+#
+# Note: hydrogen atoms can be added to any atom (like CH2), and indicate the minimal number of hydrogens
+#       for the reaction to be possible. Not indicating them will mean that they are not required at all.
+###########################################################################
+//
+EC - 1.2.1.12
+DESCRIPTION - oxidoreductase : aldehyde of oxo donor : NAD(P)+ acceptor : glyceraldehyde 3-phosphate dehydrogenase
+LEFT  - CH,O,O,PO3~200001
+RIGHT - C,O,O,PO3~210001
+SIDE - NAD -> NADH
+//
+EC - 2.7.1
+DESCRIPTION - transferase : transferring phosphorus-containing groups : phosphotransterase with alcohol group acceptor
+LEFT  - C,OH~1
+RIGHT - C,O,PO3~101
+SIDE  - ATP -> ADP
+//
+EC - 2.7.2
+DESCRIPTION - phosphotransterase with carboxy group acceptor
+LEFT  - C,O,OH~210
+RIGHT - C,O,O,PO3~210001
+SIDE - ATP -> ADP
+//
+EC - 4.1.2
+DESCRIPTION - lyase : C-C lyase : aldehyde lyase
+LEFT  - C,O,C,O~110001
+RIGHT - C,O,C,O~200001
+//
+EC - 4.2.1
+DESCRIPTION - lyase : C-O lyase : hydro lyase
+LEFT  - C,C,O~101
+RIGHT - C,C,O~200
+//
+EC - 5.3.1
+DESCRIPTION - isomerase : intramolecular oxidoreductase : interconverting aldose and ketose
+LEFT  - C,O,C,O~110002
+RIGHT - C,O,C,O~210001
+//
+EC - 5.4.2
+DESCRIPTION - isomerase : intramolecular transferase : phosphotransferase
+LEFT  - C,OH,C,O,PO3~1000010001
+RIGHT - C,O,C,OH,PO3~1000010100
+REMARK - does not check that the enzyme transfers a phosphate INTRA-molecularly
