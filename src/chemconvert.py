@@ -120,6 +120,33 @@ def hash2graph(hash, update_attributes=False):
         
     return G_total
 
+def hash2smiles(hash):
+    import openbabel
+    
+    result_list = []
+    obconvert = openbabel.OBConversion()
+    obconvert.SetOutFormat('smiles')
+
+    for (atoms, bonds) in parse_hash(hash):
+        mol = openbabel.OBMol()
+        for n in xrange(len(atoms)):
+            (node, valence, hydrogens, charge, chirality) = parse_atom(atoms[n])
+            if node == 'PO3':
+                node = 'P'
+            atom = openbabel.OBAtom()
+            atom.SetAtomicNum(atomicnum_table[node])
+            mol.AddAtom(atom)
+        for n in range(len(atoms)):
+            for m in range(n):
+                order = bonds.pop(0)
+                if order:
+                    mol.AddBond(n+1, m+1, order)
+        
+        smiles = obconvert.WriteString(mol).strip()
+        result_list.append(smiles)
+        
+    return result_list
+
 def compare_hashes(hash1, hash2, ignore_chirality=False):
     atom_bond_list1 = parse_hash(hash1)
     atom_bond_list2 = parse_hash(hash2)
@@ -159,7 +186,7 @@ def compare_hashes(hash1, hash2, ignore_chirality=False):
 def hash2template(hash):
     return hash2graph(hash).template()
 
-def hash2smiles(hash_string):
+def hash2smiles_old(hash_string):
     return hash2graph(hash_string).smiles()
 
 def hash2svg(hash_string, width=400, height=400, node_color=None, bond_color=None):
@@ -266,4 +293,5 @@ def main2():
 
     html_writer.display()
 
-if __name__ == '__main__': main2()
+if __name__ == '__main__':
+    main2()
