@@ -71,6 +71,8 @@ valence_table = {'C' : 4, 'N' : 3, 'O' : 2, 'P' : 5, 'S' : 6, 'Cl' : 1, 'H' : 1}
 # translates groups to a tuple of (<bonding atom>, <total valence>, <hydrogens>, <charge>)
 group_table = {'PO3' : ('P', 3, 0, -2), 'ADP' : ('O', 1, 0, 0), 'CoA' : ('S', 1, 0, 0)}
 
+atomicnum_table = {'H':1, 'C':6, 'N':7, 'O':8, 'F':9, 'P': 15, 'S':16, 'Cl':17}
+
 # @@@ I think counting the hydrogens is not necessary, I shall remove it later!!!
 
 def valence(atom):
