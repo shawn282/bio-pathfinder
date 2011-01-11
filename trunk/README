@@ -1,0 +1,37 @@
+Description:
+    Using the enzymatic rules derived from the EC nomenclature, we designed an algorithm to
+    exhaustively search the tree of possible pathways between any two compounds.
+
+Source code:
+    An open-source python tool that performs these calculations and provides minimal pathways is
+    available at http://code.google.com/p/bio-pathfinder/.
+
+System Requirements:
+    * Python 2.5 - 2.6
+    * Numpy
+    * Tkinter
+    * Openbabel (http://openbabel.org/wiki/Get_Open_Babel)
+
+    On OS X 10.5 and later, all requirements except openbabel are met out of the box. On most modern Linux
+    distributions, python 2.6 is provided, but Numpy and Tkinter should be installed separately. In
+    Windows, all requirements should be downloaded and installed manually.
+
+Usage:
+
+    src/pathfinder.py:
+    This program demonstrates the ability of the algorithm to find putative pathways between pairs of
+    compounds using the set of EC classes available in the resource file (rec/reaction_templates.dat). The
+    results are written to an HTML and can be viewed on any browser capable of showing SVG objects
+    (e.g. Firefox, Safari, Chrome).
+
+    src/pathcounter.py:
+    Uses the same methodology as pathfinder, without showing each possible path. It rather generates a
+    text file (log/pathcounter.log) containing the number of possible pathways between every pair of
+    compounds, for every given number of steps.
+    
+    src/find_path_example.py:
+    An example program that demonstrates how to run a simple DFS search for all pathways that connect
+    to given compounds (or set of compounds). All results are printed out to stdout.
+
+Contact:
+    For any further questions, please contact Elad Noor at elad.noor@weizmann.ac.il, or 972-8-934-4540.
